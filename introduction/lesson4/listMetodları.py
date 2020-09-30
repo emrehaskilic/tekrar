@@ -39,4 +39,4 @@ arabalar.sort()
 print(arabalar)
 
 del arabalar
-print(arabalar) #del den sonra 
+print(arabalar) #del den sonra  'arabalar' is not defined uyarısı alırız
