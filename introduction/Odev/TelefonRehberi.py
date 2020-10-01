@@ -14,22 +14,22 @@ Tuşlayınız...
 
 rehber = [
              {
-                "Id":0,
+                "Id":1,
                 "İsim":"Emre",
-                "Soyisim" :"Hask",
-                "Telefon" :"23432",
-                "Mail" : "mail"
+                "Soyisim" :"Haskılıç",
+                "Telefon" :"+905059796816",
+                "Mail" : "emrehaskilic1@gmail.com"
             }
               
         
 ]
 
 i = 1
-while i == 1:
+while i == 1:  #KİŞİ EKLEME SEÇENEĞİ
     soru = input("Lütfen yapmak istediğiniz işlemi seçiniz:")
 
     if soru == "1":
-        id = len(rehber)  
+        id = len(rehber)+1  
             
         isim = input("İsim:")
         soyisim = input("Soyisim:")
@@ -56,9 +56,14 @@ while i == 1:
                 """) 
             break 
 
-    elif soru == "3":
-        for a in rehber:
-            print(a)
+    elif soru == "3": #KİŞİ LİSTELEME SEÇENEĞİ
+        for kisi in rehber:
+            print("ID:",kisi["Id"])
+            print("İsim:",kisi["İsim"])
+            print("Soyisim:",kisi["Soyisim"])
+            print("Telefon:",kisi["Telefon"])
+            print("Mail:",kisi["Mail"])
+
         evethayir = str(input("Devam etmek istiyor musunuz?:(E/H)"))
         if evethayir.upper() == "H":
             print("""
@@ -67,7 +72,7 @@ while i == 1:
             *************
                 """)  
             break
-    elif soru == "5":
+    elif soru == "5": #KİŞİ SİLME SEÇENEĞİ
         print(rehber)
         index = int(input("Lütfen Silmek İstediğiniz İd'yi seçiniz:"))
         rehber.pop(index)
@@ -81,11 +86,24 @@ while i == 1:
                 """)  
             break
     elif soru == "2":
-        print(rehber)
-        index = int(input("Lütfen Güncellemek İstediğiniz İd'yi seçiniz:"))
-        rehber.update(
+        for kisi in rehber:
+
+
+            
+            # print("ID:",kisi["Id"])
+            # print("İsim:",kisi["İsim"])
+            # print("Soyisim:",kisi["Soyisim"])
+            # print("Telefon:",kisi["Telefon"])
+            # print("Mail:",kisi["Mail"])
+            
+            isim = input(kisi["İsim"])
+            soyisim = input( kisi["Soyisim"])
+            telefon = input(kisi["Telefon"])
+            mail = input(kisi["Mail"])
+        
+            kisi.update(
                     {
-                        "Id":id,
+                        
                         "İsim" :isim ,
                         "Soyisim" :soyisim,
                         "Telefon": telefon,
@@ -93,20 +111,46 @@ while i == 1:
 
                     }
                     )
-        index = int(input("Lütfen Silmek İstediğiniz İd'yi seçiniz:"))
-        if evethayir.upper() == "H":
-            print("""
+            evethayir = str(input("\n Devam etmek istiyor musunuz?:(E/H)"))
+            if evethayir.upper() == "H":
+                print("""
             *************
             * Güle Güle *
             *************
                 """)   
             break
-    # elif soru == "4":
-    #     isim = input("İsim:")
-    #     soyisim = input("Soyisim:")
-    #     aramalistesi = [{}]
-    #     aramakayıt = aramalistesi(isim,soyisim)
-    #     print(f"{rehber.get(aramakayıt)}") #?????ARAMA KISMI???
+    elif soru == "4": #KİŞİ ARAMA SEÇENEĞİ
+        for kisi in rehber:
+            name= input("Aramak istediğiniz İsmi Giriniz:")
+            if name in kisi["İsim"]:
+                print("ID:",kisi["Id"])
+                print("İsim:",kisi["İsim"])
+                print("Soyisim:",kisi["Soyisim"])
+                print("Telefon:",kisi["Telefon"])
+                print("Mail:",kisi["Mail"])
+                evethayir = str(input("\n Devam etmek istiyor musunuz?:(E/H)"))
+                if evethayir.upper() == "H":
+                    print("""
+                    *************
+                    * Güle Güle *
+                    *************
+                        """)
+                else:
+                    break
+            else:
+                print("Aradığınız Kayıt Bulunamadı")  
+                break
+             
+
+                                
+        
+                    
+                                
+                
+                
+        
+        
+        
 
  
 
