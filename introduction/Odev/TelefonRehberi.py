@@ -29,8 +29,7 @@ while i == 1:  #KİŞİ EKLEME SEÇENEĞİ
     soru = input("Lütfen yapmak istediğiniz işlemi seçiniz:")
 
     if soru == "1":
-        id = len(rehber)+1  
-            
+        id = len(rehber)+1      
         isim = input("İsim:")
         soyisim = input("Soyisim:")
         telefon = input("Telefon:")
@@ -73,38 +72,49 @@ while i == 1:  #KİŞİ EKLEME SEÇENEĞİ
                 """)  
             break
     elif soru == "5": #KİŞİ SİLME SEÇENEĞİ
-        print(rehber)
-        index = int(input("Lütfen Silmek İstediğiniz İd'yi seçiniz:"))
-        rehber.pop(index)
-        print("Kayıt Basarıyla Silindi ✓")
-        evethayir = str(input("\n Devam etmek istiyor musunuz?:(E/H)"))
-        if evethayir.upper() == "H":
-            print("""
+        for kisi in rehber:
+            print("ID:",kisi["Id"])
+            print("İsim:",kisi["İsim"])
+            print("Soyisim:",kisi["Soyisim"])
+            print("Telefon:",kisi["Telefon"])
+            print("Mail:",kisi["Mail"])
+        
+            index = int(input("Silmek istediğiniz idyi seçiniz:"))
+            
+            id = index -1
+            rehber.pop(id)
+            print("Kayıt Basarıyla Silindi ✓")
+            evethayir = str(input("\n Devam etmek istiyor musunuz?:(E/H)"))
+            if evethayir.upper() == "H":
+                print("""
             *************
             * Güle Güle *
             *************
                 """)  
-            break
+                break
     elif soru == "2":
         for kisi in rehber:
+            print("ID:",kisi["Id"])
+            print("İsim:",kisi["İsim"])
+            print("Soyisim:",kisi["Soyisim"])
+            print("Telefon:",kisi["Telefon"])
+            print("Mail:",kisi["Mail"])
+            index = int(input("Güncellemek istediğiniz idyi seçiniz:"))
+            id = index -1
 
 
             
-            # print("ID:",kisi["Id"])
-            # print("İsim:",kisi["İsim"])
-            # print("Soyisim:",kisi["Soyisim"])
-            # print("Telefon:",kisi["Telefon"])
-            # print("Mail:",kisi["Mail"])
+           
             
             isim = input(kisi["İsim"])
             soyisim = input( kisi["Soyisim"])
             telefon = input(kisi["Telefon"])
             mail = input(kisi["Mail"])
         
-            kisi.update(
+            kisi[id].update(
                     {
                         
-                        "İsim" :isim ,
+                        "İsim" :isim,
                         "Soyisim" :soyisim,
                         "Telefon": telefon,
                         "Mail": mail
