@@ -57,11 +57,11 @@ while i == 1:  #KİŞİ EKLEME SEÇENEĞİ
 
     elif soru == "3": #KİŞİ LİSTELEME SEÇENEĞİ
         for kisi in rehber:
-            print("ID:",kisi["Id"])
-            print("İsim:",kisi["İsim"])
-            print("Soyisim:",kisi["Soyisim"])
-            print("Telefon:",kisi["Telefon"])
-            print("Mail:",kisi["Mail"])
+            print("ID",kisi["Id"])
+            print("İsim",kisi["İsim"])
+            print("Soyisim",kisi["Soyisim"])
+            print("Telefon",kisi["Telefon"])
+            print("Mail",kisi["Mail"])
 
         evethayir = str(input("Devam etmek istiyor musunuz?:(E/H)"))
         if evethayir.upper() == "H":
@@ -92,7 +92,7 @@ while i == 1:  #KİŞİ EKLEME SEÇENEĞİ
             *************
                 """)  
                 break
-    elif soru == "2":
+    elif soru == "2":  #KİŞİ GÜNCELLEME
         for kisi in rehber:
             print("ID:",kisi["Id"])
             print("İsim:",kisi["İsim"])
